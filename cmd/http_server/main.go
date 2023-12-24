@@ -2,10 +2,11 @@ package main
 
 import (
 	"chord/internal/linkedlistnode"
-	"github.com/pborman/getopt/v2"
-	log "github.com/sirupsen/logrus"
 	"os"
 	"sync"
+
+	"github.com/pborman/getopt/v2"
+	log "github.com/sirupsen/logrus"
 )
 
 func main() {

@@ -13,5 +13,8 @@ images:
 images-clean:
 	docker image rm http-server -f 
 
+test:
+	go test -v ./...
+
 clean: http-server-clean images-clean
 
