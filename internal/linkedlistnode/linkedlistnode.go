@@ -51,8 +51,9 @@ func (node *LinkedlistNode) Start() (bool, error) {
 	node.httpServer = &http.Server{Addr: node.address}
 
 	// Initialize handlers
-	http.HandleFunc("/ping", pingHandler)
-	http.HandleFunc("/put", node.putHandler)
+	http.HandleFunc("GET /ping", pingHandler)
+	http.HandleFunc("PUT /put", node.putHandler)
+	http.HandleFunc("PUT /join", node.joinClusterHandler)
 
 	// Serve
 	go func() {
@@ -91,6 +92,11 @@ func (node *LinkedlistNode) Shutdown() {
 	if node.waitGroup != nil {
 		node.waitGroup.Done()
 	}
+
+}
+
+//
+func (node *LinkedlistNode) joinClusterHandler(w http.ResponseWriter, req *http.Request) {
 
 }
 

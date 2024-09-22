@@ -8,7 +8,7 @@ http-server-clean:
 	rm -f http-server
 
 images: 
-	docker build --tag http-server ./ -f dockerfiles/HttpServer.docker
+	docker build --tag http-server ./ -f cmd/http_server/httpServer.docker
 
 images-clean:
 	docker image rm http-server -f 

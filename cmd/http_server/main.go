@@ -20,7 +20,7 @@ func main() {
 	)
 
 	getopt.FlagLong(&help, "help", 'h', "Help")
-	getopt.FlagLong(&address, "address", 'f', "Where the server is listening. Ex. localhost:8080")
+	getopt.FlagLong(&address, "address", 'a', "Where the server is listening. Ex. localhost:8080")
 
 	getopt.Parse()
 
